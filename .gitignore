@@ -1,0 +1,10 @@
+*.out
+*.json
+*.log
+*.txt
+*.xml
+*.o
+main
+bin/
+obj/
+
