@@ -44,3 +44,5 @@ def mounty_carlo_intergral(function, upper_bound, lower_bound, num_samples):
 # print(fast_eval_intergral(lambda x: x**2, 1, 0, 1000000)) # 0.3333333333333333
 # print(fast_eval_double_intergral_constant_bounds(lambda x, y: x**2 + y**2, 1, 0, 1, 0, 10000)) # 1.3333333333333333
 print(mounty_carlo_intergral(lambda x: x**2, 1, 0, 10)) # 0.3333333333333333
+
+
