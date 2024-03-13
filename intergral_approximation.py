@@ -1,7 +1,3 @@
-
-
-
-
 def eval_intergral(function, upper_bound, lower_bound, num_intervals):
     """
     This function evaluates the intergral of a function using the trapezoidal rule
@@ -12,4 +8,14 @@ def eval_intergral(function, upper_bound, lower_bound, num_intervals):
         result += function(lower_bound + i * h)
     return result * h
 
-print(eval_intergral(lambda x: x**2, 1, 0, 10000000)) # 0.3333333333333333
+def eval_double_intergral(function, upper_bound_x, lower_bound_x, upper_bound_y, lower_bound_y, num_intervals):
+    d_x = (upper_bound_x - lower_bound_x) / num_intervals
+    d_y = (upper_bound_y - lower_bound_y) / num_intervals
+    result = 0
+    for i in range(num_intervals):
+        for j in range(num_intervals):
+            result += function(lower_bound_x + i * d_x, lower_bound_y + j * d_y)
+    return result * d_x * d_y
+
+print(eval_intergral(lambda x: x**2, 1, 0, 10000)) # 0.3333333333333333
+print(eval_double_intergral(lambda x, y: x**2 + y**2, 1, 0, 1, 0, 1000)) # 1.3333333333333333
